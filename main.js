@@ -10,7 +10,7 @@ let hue = 0;
 
 renderer.setSize( window.innerWidth, window.innerHeight );
 
-const geometry = new THREE.BoxGeometry( 2, 2, 2 );
+const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 import textureImg from './rgb.gif';
 const texture = new THREE.TextureLoader().load(textureImg);
 const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
