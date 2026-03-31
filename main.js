@@ -6,6 +6,7 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
+let hue = 0;
 
 renderer.setSize( window.innerWidth, window.innerHeight );
 
@@ -23,12 +24,18 @@ scene.add(donut);
 camera.position.setZ(45);
 function animate() {
   requestAnimationFrame(animate);
+
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
   donut.rotation.x += 0.01;
   donut.rotation.y += 0.01;
 
-  renderer.render( scene, camera );
+  hue += 0.01;
+  if (hue > 1) hue = 0;
+
+  cube.material.color.setHSL(hue, 1, 0.5);
+
+  renderer.render(scene, camera);
 }
 animate();
 
