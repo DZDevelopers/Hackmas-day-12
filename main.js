@@ -3,16 +3,12 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-// FIX: Removed parentheses and passed the object directly to the constructor
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
 
 renderer.setSize( window.innerWidth, window.innerHeight );
-// FIX: Removed setAnimationLoop as you are using requestAnimationFrame inside animate()
 
-document.body.appendChild( renderer.domElement );
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 import textureImg from './rgb.gif';
 const texture = new THREE.TextureLoader().load(textureImg);
