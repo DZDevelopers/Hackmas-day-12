@@ -14,7 +14,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 
 document.body.appendChild( renderer.domElement );
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const texture = new THREE.TextureLoader().load('rgb.gif')
+const texture = new THREE.TextureLoader().load('/rgb.gif')
 const material = new THREE.MeshBasicMaterial( {map: texture} );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
