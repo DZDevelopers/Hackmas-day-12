@@ -14,7 +14,8 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 
 document.body.appendChild( renderer.domElement );
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const texture = new THREE.TextureLoader().load('/rgb.gif')
+import textureImg from './rgb.gif';
+const texture = new THREE.TextureLoader().load(textureImg);
 const material = new THREE.MeshBasicMaterial( {map: texture} );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
@@ -23,7 +24,7 @@ const donut_geo = new THREE.TorusGeometry(10, 3, 16, 100);
 const donut_tex = new THREE.MeshBasicMaterial({ color: 0xffffff });
 const donut = new THREE.Mesh(donut_geo, donut_tex);
 scene.add(donut);
-
+camera.position.setZ(45);
 function animate() {
   requestAnimationFrame(animate);
   cube.rotation.x += 0.01;
@@ -47,7 +48,6 @@ function add_star() {
   star.position.set(x, y, z);
   scene.add(star);
 }
-camera.position.setZ(45);
 
 Array(200).fill().forEach(add_star);
 
