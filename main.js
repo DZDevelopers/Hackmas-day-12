@@ -15,7 +15,7 @@ import textureImg from './rgb.gif';
 const texture = new THREE.TextureLoader().load(textureImg);
 const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
 const cube = new THREE.Mesh( geometry, material );
-cube.scale.set(5, 5, 5);
+cube.scale.set(2, 2, 2);
 scene.add( cube );
 
 const donut_geo = new THREE.TorusGeometry(10, 3, 16, 100);
